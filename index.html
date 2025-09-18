@@ -1,4 +1,58 @@
-git add index.html
-git commit -m "Add starter index.html"
-git branch -M main    # branch name ko 'main' bana raha hai
-git push -u origin main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to My Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      font-size: 28px;
+    }
+    main {
+      padding: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 10px;
+      background: #333;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🚀 Welcome to My Jenkins Deployed Website
+  </header>
+  <main>
+    <h1>Hello, World! 🎉</h1>
+    <p>This website is deployed automatically using Jenkins Pipeline.</p>
+    <button onclick="alert('Deployment working successfully!')">Click Me</button>
+  </main>
+  <footer>
+    &copy; 2025 My Website | Powered by Jenkins + Apache
+  </footer>
+</body>
+</html>
+
