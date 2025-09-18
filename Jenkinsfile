@@ -1,22 +1,16 @@
 pipeline {
     agent any
-
+    
+        environment {
+            username = "shanze"
+            server-ip = "192.168.56.105"
+    }
     stages {
-        stage('Build') {
-            steps {
-                echo "Building project..."
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-            }
-        }
         stage('Deploy') {
             steps {
                 echo "Deploying files to Apache web server..."
                 sh '''
-                  sudo rsync -avz $WORKSPACE/ /var/www/html/ --exclude Jenkinsfile --exclude .git
+                  rsync -av ${WORKSPACE}/* username@server-ip:/var/www/html/ --exclude Jenkinsfile --exclude .git
                   sudo systemctl restart apache2
                 '''
             }
