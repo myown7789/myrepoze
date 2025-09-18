@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "Deploying files to Apache web server..."
                 sh '''
-                  rsync -av ${WORKSPACE}/* username@serverip:/var/www/html/ --exclude Jenkinsfile --exclude .git
+                  rsync -av ${WORKSPACE}/* ${username}@${serverip}:/var/www/html/ --exclude Jenkinsfile --exclude .git
                   sudo systemctl restart apache2
                 '''
             }
