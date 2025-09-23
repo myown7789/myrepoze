@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Show Files') {
+            steps {
+                sh 'cat file3.txt'
+                sh 'cat file4.txt'
+                sh 'cat file5.txt'
+            }
+        }
+    }
+}
+
