@@ -1,0 +1,23 @@
+ pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                      rsync -avz --delete ./app/ shanze@192.168.56.105:/var/www/html/
+
+
+
+                '''
+            }
+        }
+    }
+}
+
