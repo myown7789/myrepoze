@@ -1,11 +1,18 @@
-pipeline {
+ pipeline {
     agent any
+
     stages {
-        stage('Show Files') {
+        stage('Build') {
             steps {
-                sh 'cat file3.txt'
-                sh 'cat file4.txt'
-                sh 'cat file5.txt'
+                echo 'Building...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    rsync -avz --delete ./app/ user@yourserver:/var/www/html/
+                '''
             }
         }
     }
